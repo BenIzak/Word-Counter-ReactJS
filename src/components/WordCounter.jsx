@@ -7,6 +7,7 @@ function TextAreaWordCount() {
   const [wordArray, setWordArray] = useState([]);
   const [wordObjectArray, setWordObjectArray] = useState([]);
   const [differentWord, setDifferentWord] = useState(0);
+  const [DecreasingOrder, setDecreasingOrder] = useState(true);
 
   useEffect(() => { 
 
@@ -67,17 +68,34 @@ function TextAreaWordCount() {
         </div>
 
         <textarea onChange={handlePhraseChange} style={{ width: '80%' }} placeholder="Entrez une phrase ici" />
+        <div className="wordCountSection">  
+          
+          {/* Bouton pour changer l'ordre d'affichage des mots */}
+          <button onClick={() => setDecreasingOrder(!DecreasingOrder)}>{DecreasingOrder ? 'Ordre croissant' : 'Ordre décroissant'}</button>
+
         <div className="wordCount">
-            {wordObjectArray.map((wordObject, index) => (
-                <span 
-                key={index}
-                style={{ backgroundColor: `rgba(0, 255, 0, ${wordObject.occurrence / wordArray.length})` } } 
-                >
-                    {wordObject.name} : {wordObject.occurrence}
-                </span>
-            ))}
+
+          {/* Affiche les mots et leur nombre d'occurrences en fonction de l'ordre choisi */}
+          {DecreasingOrder ? wordObjectArray.sort((a, b) => b.occurrence - a.occurrence).map((wordObject) => (
+
+              <span key={wordObject.name} style={{ backgroundColor: `rgba(0, 255, 0, ${wordObject.occurrence / wordArray.length})` }}>
+                  {wordObject.name} : {wordObject.occurrence}
+              </span>
+
+          )) : wordObjectArray.sort((a, b) => a.occurrence - b.occurrence).map((wordObject) => (
+
+            <span key={wordObject.name} style={{ backgroundColor: `rgba(0, 255, 0, ${wordObject.occurrence / wordArray.length})` } } >
+                  {wordObject.name} : {wordObject.occurrence}
+              </span>
+
+          ))}
+
         </div> 
-        <SaveButton wordCount={wordArray.length} differentWord={differentWord} />
+        </div>
+
+        {/* Ce composant est utilisé pour afficher le bouton de sauvegarde des statistiques uniquement si il y a au moins un mot */}
+
+        {wordArray.length > 0 && <SaveButton wordCount={wordArray.length} differentWord={differentWord} /> }
 
     </>
   );

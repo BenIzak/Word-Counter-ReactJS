@@ -82,9 +82,38 @@ textarea:focus{
   outline: none;
 }
 
-.wordCount{
+.wordCountSection{
   width: 80%;
-  max-height: 20vh;
+  height: auto;
+
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "button wordCount";
+  column-gap: 1rem;
+
+  border-radius: 5px;
+}
+
+.wordCountSection button{
+  width: auto;
+  height: 10vh;
+
+  background-color: rgb(91, 91, 91);
+  border: none;
+  border-radius: 5px;
+
+  padding: 0.5rem 1rem;
+
+  color: white;
+  font-size: 0.8rem;
+
+  cursor: pointer;
+}
+
+.wordCount{
+  width: auto;
+  height: 10vh;
 
   display: flex;
   flex-direction: row;
