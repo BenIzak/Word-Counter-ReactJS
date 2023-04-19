@@ -14,7 +14,7 @@ function TextAreaWordCount() {
 
     const updateWordCounts = () => {
         const words = phrase
-        .replace(/[^\w\s',.]/gi, '') // Retire tous les caractères spéciaux et ponctuation sauf le guillemet simple, la virgule et le point
+        .replace(/[^\p{L}\s',.]/gu, '') // Retire tous les caractères spéciaux et ponctuation sauf le guillemet simple, la virgule et le point
         .toLowerCase()
         .split(/[ ,.]+/) // Crée un tableau de mots en utilisant des espaces, des virgules ou des points comme séparateurs
         .filter(word => !/^'+$/.test(word)) // Retire les chaînes de caractères ne contenant que des guillemets simples
