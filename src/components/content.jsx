@@ -5,20 +5,26 @@ import TextAreaWordCount from './WordCounter';
 
 export default function PageContent() {
   return (
-    <div className="mainContainer">
+    <>
       <h1>Compteur de mots</h1>
       <p>
         Entrez une phrase dans la zone de texte ci-dessous et le compteur de mots affichera le nombre
         total de mots et le nombre de mots différents.
       </p>
+      <p>
+        Vous pouvez également sauvegarder les statistiques de votre phrase en cliquant sur le bouton "Sauvegarder".
+      </p>
 
-        {/*  Appelle le composant "TextAreaWordCount" contenant le textarea et le compteur de mots  */}
+      <div className="mainContainer">
 
-      <TextAreaWordCount />
+          {/*  Appelle le composant "TextAreaWordCount" contenant le textarea et le compteur de mots  */}
 
-        {/*  Crée une div "statsHistory" pour afficher les sauvegardes  */}
+        <TextAreaWordCount />
 
-      <div className='statsHistory'></div>
-    </div>
+          {/*  Crée une div "statsHistory" pour afficher les sauvegardes  */}
+
+        <div className='statsHistory'></div>
+      </div>
+    </>
   );
 }
