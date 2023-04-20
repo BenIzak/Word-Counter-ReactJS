@@ -41,8 +41,13 @@ h1{
   color: white;
 }
 
+h2{
+  font-size: 1.5rem;
+  color: white;
+}
+
 p{
-  width: 80%;
+  width: 90%;
 
   text-align: center;
   font-size: 1.1rem;
@@ -70,7 +75,7 @@ p{
 }
 
 textarea{
-  max-width: 80%;
+  max-width: 90%;
   height: auto;
 
   padding: 1rem;
@@ -87,7 +92,7 @@ textarea:focus{
 }
 
 .wordCountSection{
-  width: 80%;
+  width: 90%;
   height: auto;
 
   display: grid;
@@ -97,6 +102,55 @@ textarea:focus{
   column-gap: 1rem;
 
   border-radius: 5px;
+}
+
+.savedPhrase {
+  width: 90%;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+
+  background-color: rgb(91, 91, 91) ;
+  border-radius: 5px;
+
+
+  padding: 1rem;
+}
+
+.savedPhrase div{
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  column-gap: 1rem;
+}
+.savedPhrase button {
+  width: auto;
+  height: 5vh;
+
+  background-color: rgb(215, 215, 215);
+  border: none;
+  border-radius: 5px;
+
+  padding: 0.5rem 1rem;
+
+  color: rgb(0, 0, 0);
+  font-size: 0.8rem;
+
+  cursor: pointer;
+}
+
+.savedPhrase button:hover{
+  cursor: pointer;
+  background-color: rgb(195, 195, 195);
+}
+
+.savedPhrase button:active{
+  background-color: rgb(175, 175, 175);
 }
 
 .wordCountSection button{
@@ -148,7 +202,7 @@ textarea:focus{
 
 
 button{
-  width: 80%;
+  width: 90%;
   height: 3rem;
 
   display: flex;
@@ -183,7 +237,7 @@ button:focus{
 
 
 .statsHistory{
-  width: 80%;
+  width: 90%;
   height: auto;
 
   display: flex;
@@ -201,7 +255,7 @@ button:focus{
 }
 
 .stats {
-  width: 80%;
+  width: 90%;
   height: auto;
 
   display: flex;

@@ -61,6 +61,9 @@ function TextAreaWordCount() {
 
   return (
     <>
+        <h2>Compteur de mots</h2>
+
+        {/* Affiche le nombre total de mots et le nombre de mots différents */} 
 
         <div className="stats">
             <div>Nombre total de mots : {wordArray.length}</div>
@@ -93,9 +96,9 @@ function TextAreaWordCount() {
         </div> 
         </div>
 
-        {/* Ce composant est utilisé pour afficher le bouton de sauvegarde des statistiques uniquement si il y a au moins un mot */}
+        {/* Appelle le composant "SaveButton" contenant le bouton "Sauvegarder" */}
 
-        {wordArray.length > 0 && <SaveButton wordCount={wordArray.length} differentWord={differentWord} /> }
+        <SaveButton wordCount={wordArray.length} differentWord={differentWord} phrase={phrase} />
 
     </>
   );
